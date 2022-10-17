@@ -58,12 +58,7 @@ class Queue {
   }
 
   getUnderlyingList() {
-    let current = this.head
-
-    while(current) {
-      console.log(current.value)
-      current = current.next
-    }
+    return this.head
   }
 
   enqueue(value) {
