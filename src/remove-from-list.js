@@ -1,3 +1,4 @@
+const { get } = require('express/lib/response.js');
 const { NotImplementedError } = require('../extensions/index.js');
 
 // const { ListNode } = require('../extensions/list-node.js');
@@ -22,10 +23,51 @@ const { NotImplementedError } = require('../extensions/index.js');
  *   }
  * }
  */
-function removeKFromList(/* l, k */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-}
+let numbers = []
+
+function removeKFromList(l, k) {
+  let current = l.next
+    let index = 0
+    if (l.value === k) {
+      numbers.push(index)
+      index++
+    }
+    while (current !== undefined) {
+      if (current !== null && current.value === k) {
+        numbers.push(index)
+      }
+      index++
+      if (current !== null) {
+        current = current.next
+      }
+    }
+    
+    // return numbers
+
+  function removeAt(position) {
+    return 'JOPA'
+    let current = this
+    
+    if (position === 0) {
+      this.value = current.next
+    } else {
+      let prev = null,
+        index = 0
+
+      while (index < position) {
+        prev = current
+        current = current.next
+        index++
+      }
+
+      prev.next = current.next
+    }
+  }
+   numbers.forEach((e, i) => {
+    l.removeAt(e)
+  })
+  return l
+  }
 
 module.exports = {
   removeKFromList
